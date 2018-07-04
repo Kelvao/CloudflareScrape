@@ -23,7 +23,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CloudflareScrapeCore {
+class CloudflareScrapeCore {
 
     private String UA;
     private final String url;
@@ -56,16 +56,13 @@ public class CloudflareScrapeCore {
                 conn.disconnect();
                 str = sb.toString();
                 System.out.println(str);
-                String jschl_vc = Objects.requireNonNull(regex(str, "name=\"jschl_vc\" value=\"(.+?)\"")).get(0);    //正则取值
-                String pass = Objects.requireNonNull(regex(str, "name=\"pass\" value=\"(.+?)\"")).get(0);            //
-                int jschl_answer = get_answer(str);                                         //计算结果
+                String jschl_vc = Objects.requireNonNull(regex(str, "name=\"jschl_vc\" value=\"(.+?)\"")).get(0);
+                String pass = Objects.requireNonNull(regex(str, "name=\"pass\" value=\"(.+?)\"")).get(0);
+                int jschl_answer = get_answer(str);
                 System.out.println(jschl_answer);
 
                 Thread.sleep(4000);
 
-                /*
-                  第二次链接得到相应头为302的页面并取得cookies；
-                 */
                 String req = String.valueOf("https://" + ConnUrl.getHost()) + "/cdn-cgi/l/chk_jschl?"
                         + "jschl_vc=" + jschl_vc + "&pass=" + pass + "&jschl_answer=" + jschl_answer;
                 System.out.println(req);
@@ -81,9 +78,6 @@ public class CloudflareScrapeCore {
                     reqconn.disconnect();
                     System.out.println(reqconn.getHeaderFields());
 
-                    /*
-                      同上
-                     */
                     HttpURLConnection conn302 = (HttpURLConnection) new URL(req).openConnection();
                     conn302.setRequestProperty("Referer", ConnUrl.getHost());
                     conn302.setRequestProperty("User-Agent", getUA());
@@ -114,7 +108,7 @@ public class CloudflareScrapeCore {
         return null;
     }
 
-    private int get_answer(String str) {  //取值
+    private int get_answer(String str) {
         int a = 0;
 
         try {
@@ -154,7 +148,6 @@ public class CloudflareScrapeCore {
         this.UA = UA;
     }
 
-
     private List<String> regex(String text, String pattern) {    //正则
         try {
             Pattern pt = Pattern.compile(pattern);
@@ -166,9 +159,9 @@ public class CloudflareScrapeCore {
                     if (mt.groupCount() > 1) {
                         group.add(mt.group(1));
                         group.add(mt.group(2));
-                    } else group.add(mt.group(1));
-
-
+                    } else {
+                        group.add(mt.group(1));
+                    }
                 }
             }
             return group;
@@ -178,7 +171,7 @@ public class CloudflareScrapeCore {
         return null;
     }
 
-    public HashMap<String, String> List2Map(List<HttpCookie> list) {  //转换为jsoup可用的map
+    public HashMap<String, String> Coockies2HashMap(List<HttpCookie> list) {
         HashMap<String, String> map = new HashMap<>();
         try {
             if (list != null) {
@@ -186,14 +179,12 @@ public class CloudflareScrapeCore {
                     String[] listStr = list.get(i).toString().split("=");
                     map.put(listStr[0], listStr[1]);
                 }
-                Log.i("List2Map", map.toString());
+                Log.i("Coockies", map.toString());
             } else return map;
 
         } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
         }
-
-
         return map;
     }
 

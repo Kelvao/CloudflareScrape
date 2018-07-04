@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 
 import java.util.HashMap;
 
-public class CloudflareScrapTask extends AsyncTask<Void, Void, HashMap<String, String>> {
+class CloudflareScrapTask extends AsyncTask<Void, Void, HashMap<String, String>> {
 
     private final String UA;
     private final String URL;
@@ -20,7 +20,7 @@ public class CloudflareScrapTask extends AsyncTask<Void, Void, HashMap<String, S
     protected HashMap<String, String> doInBackground(Void... voids) {
         CloudflareScrapeCore cloudflareScrapeCore = new CloudflareScrapeCore(URL);
         cloudflareScrapeCore.setUA(UA);
-        return cloudflareScrapeCore.List2Map(cloudflareScrapeCore.cookies());
+        return cloudflareScrapeCore.Coockies2HashMap(cloudflareScrapeCore.cookies());
     }
 
     @Override

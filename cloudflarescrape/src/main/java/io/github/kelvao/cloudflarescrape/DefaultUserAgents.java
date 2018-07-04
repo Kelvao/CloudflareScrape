@@ -2,7 +2,7 @@ package io.github.kelvao.cloudflarescrape;
 
 import java.util.Random;
 
-public class DefaultUserAgents {
+class DefaultUserAgents {
 
     private static final String[] DEFAULT_USER_AGENTS = {
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
