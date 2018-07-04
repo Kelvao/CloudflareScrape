@@ -73,9 +73,8 @@ public JsoupTask(HashMap<String, String> coockies) {
 
 ## Credits
 
-This project use [this class](https://github.com/zhkrb/cloudflare-scrape-Android)
-Thanks mr.[zhkrb](https://github.com/zhkrb)
+This project use [this class](https://github.com/zhkrb/cloudflare-scrape-Android) from [zhkrb](https://github.com/zhkrb)
 
-##License
+## License
 
 CloudflareScrape is released under the MIT license. See [LICENSE](https://github.com/Kelvao/CloudflareScrape/blob/master/LICENSE) for details.
