@@ -20,15 +20,15 @@ public class CloudflareScrapeTask extends AsyncTask<Void, Void, HashMap<String, 
     protected HashMap<String, String> doInBackground(Void... voids) {
         CloudflareScrapeCore cloudflareScrapeCore = new CloudflareScrapeCore(URL);
         cloudflareScrapeCore.setUA(UA);
-        return cloudflareScrapeCore.Coockies2HashMap(cloudflareScrapeCore.cookies());
+        return cloudflareScrapeCore.Cookies2HashMap(cloudflareScrapeCore.cookies());
     }
 
     @Override
-    protected void onPostExecute(HashMap<String, String> coockies) {
-        callback.CloudflareScrapedCoockies(coockies);
+    protected void onPostExecute(HashMap<String, String> cookies) {
+        callback.CloudflareScrapedCookies(cookies);
     }
 
     public interface Callback {
-        void CloudflareScrapedCoockies(HashMap<String, String> coockies);
+        void CloudflareScrapedCookies(HashMap<String, String> cookies);
     }
 }

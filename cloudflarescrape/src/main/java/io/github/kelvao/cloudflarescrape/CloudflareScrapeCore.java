@@ -171,7 +171,7 @@ class CloudflareScrapeCore {
         return null;
     }
 
-    public HashMap<String, String> Coockies2HashMap(List<HttpCookie> list) {
+    public HashMap<String, String> Cookies2HashMap(List<HttpCookie> list) {
         HashMap<String, String> map = new HashMap<>();
         try {
             if (list != null) {
