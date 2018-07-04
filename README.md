@@ -23,7 +23,7 @@ implementation 'com.github.Kelvao:CloudflareScrape:0.1.0'
 
 ## How to use
 
-Instantiate a new CloudflareScrap object and set the Builder;
+Instantiate a new CloudflareScrap object and set the Builder:
 
 ```java
 CloudflareScrape cloudflareScrape = new CloudflareScrape.Builder()
@@ -33,7 +33,7 @@ CloudflareScrape cloudflareScrape = new CloudflareScrape.Builder()
 ```
 
 
-And just execute the AsyncTask:
+And just execute the AsyncTask only once (probably in your "onCreateView"):
 
 ```java
 cloudflareScrape.execute();
@@ -70,6 +70,8 @@ public JsoupTask(HashMap<String, String> coockies) {
             }
     }
 ```
+
+Every time you make user Jsoup, use the coockies already generated and passed from callback.
 
 ## Credits
 
