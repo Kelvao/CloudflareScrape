@@ -9,7 +9,7 @@ Library to use Jsoup on web pages with Cloudflare
 
 Just add you have to add these lines in your build.gradle file:
 
-```xml
+```groovy
 allprojects {
     repositories {
       maven { url 'https://jitpack.io' }
@@ -71,7 +71,7 @@ public JsoupTask(HashMap<String, String> coockies) {
     }
 ```
 
-Every time you use Jsoup, use the coockies already generated from callback.
+__Every time you use Jsoup, use the coockies already generated from callback.__
 
 ## Credits
 
