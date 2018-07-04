@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 
 import java.util.HashMap;
 
-class CloudflareScrapeTask extends AsyncTask<Void, Void, HashMap<String, String>> {
+public class CloudflareScrapeTask extends AsyncTask<Void, Void, HashMap<String, String>> {
 
     private final String UA;
     private final String URL;
