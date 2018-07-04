@@ -21,12 +21,12 @@ implementation 'com.github.Kelvao:CloudflareScrape:0.1.0'
 
 ## How to use
 
-Instanciate a new CloudflareScrap object;
+Instantiate a new CloudflareScrap object and set the Builder;
 
 ```java
 CloudflareScrape cloudflareScrape = new CloudflareScrape.Builder()
                 .setURL("your url")
-                .setCallback(this) //implements this callback any way
+                .setCallback(this) //implement wherever you want
                 .build();
 ```
 
