@@ -7,18 +7,6 @@ public class CloudflareScrape {
     private String URL;
     private CloudflareScrapTask.Callback callback;
 
-    public String getUA() {
-        return UA;
-    }
-
-    public String getURL() {
-        return URL;
-    }
-
-    public CloudflareScrapTask.Callback getCallback() {
-        return callback;
-    }
-
     CloudflareScrape(Builder builder) {
         this.UA = builder.UA;
         this.URL = builder.URL;
@@ -36,16 +24,19 @@ public class CloudflareScrape {
         private String URL;
         private CloudflareScrapTask.Callback callback;
 
-        public void setUA(String UA) {
+        public Builder setUA(String UA) {
             this.UA = UA;
+            return this;
         }
 
-        public void setURL(String URL) {
+        public Builder setURL(String URL) {
             this.URL = URL;
+            return this;
         }
 
-        public void setCallback(CloudflareScrapTask.Callback callback) {
+        public Builder setCallback(CloudflareScrapTask.Callback callback) {
             this.callback = callback;
+            return this;
         }
 
         public CloudflareScrape build() {
