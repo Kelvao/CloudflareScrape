@@ -25,18 +25,15 @@ import java.util.regex.Pattern;
 
 public class CloudflareScrapeCore {
 
-    @SuppressWarnings("FieldCanBeLocal")
-    private CookieManager cm;
     private String UA;
     private final String url;
 
-
-    public CloudflareScrapeCore(String url) {
+    CloudflareScrapeCore(String url) {
         this.url = url;
     }
 
     public List<HttpCookie> cookies() {
-        cm = new CookieManager();
+        CookieManager cm = new CookieManager();
         cm.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
         CookieHandler.setDefault(cm);
 

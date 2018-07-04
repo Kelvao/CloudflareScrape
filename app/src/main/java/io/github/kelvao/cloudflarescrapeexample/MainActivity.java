@@ -1,9 +1,7 @@
 package io.github.kelvao.cloudflarescrapeexample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import io.github.kelvao.cloudflarescrape.CloudflareScrape;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,4 +10,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+
 }

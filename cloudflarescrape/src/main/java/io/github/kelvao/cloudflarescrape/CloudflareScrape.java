@@ -1,12 +1,10 @@
 package io.github.kelvao.cloudflarescrape;
 
-import android.content.Context;
-
+@SuppressWarnings("ALL")
 public class CloudflareScrape {
 
     private String UA;
     private String URL;
-    private Context context;
     private CloudflareScrapTask.Callback callback;
 
     public String getUA() {
@@ -17,10 +15,6 @@ public class CloudflareScrape {
         return URL;
     }
 
-    public Context getContext() {
-        return context;
-    }
-
     public CloudflareScrapTask.Callback getCallback() {
         return callback;
     }
@@ -28,19 +22,18 @@ public class CloudflareScrape {
     CloudflareScrape(Builder builder) {
         this.UA = builder.UA;
         this.URL = builder.URL;
-        this.context = builder.context;
         this.callback = builder.callback;
     }
 
-    public void execute(){
-
+    public void execute() {
+        CloudflareScrapTask cloudflareScrapTask = new CloudflareScrapTask(UA, URL, callback);
+        cloudflareScrapTask.execute();
     }
 
     public static class Builder {
 
         private String UA;
         private String URL;
-        private Context context;
         private CloudflareScrapTask.Callback callback;
 
         public void setUA(String UA) {
@@ -49,10 +42,6 @@ public class CloudflareScrape {
 
         public void setURL(String URL) {
             this.URL = URL;
-        }
-
-        public void setContext(Context context) {
-            this.context = context;
         }
 
         public void setCallback(CloudflareScrapTask.Callback callback) {

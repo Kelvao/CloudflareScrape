@@ -6,14 +6,14 @@ import java.util.HashMap;
 
 public class CloudflareScrapTask extends AsyncTask<Void, Void, HashMap<String, String>> {
 
-    private final Callback callback;
     private final String UA;
     private final String URL;
+    private final Callback callback;
 
-    public CloudflareScrapTask(Callback callback, String UA, String URL) {
-        this.callback = callback;
+    CloudflareScrapTask(String UA, String URL, Callback callback) {
         this.UA = UA;
         this.URL = URL;
+        this.callback = callback;
     }
 
     @Override
@@ -24,11 +24,11 @@ public class CloudflareScrapTask extends AsyncTask<Void, Void, HashMap<String, S
     }
 
     @Override
-    protected void onPostExecute(HashMap<String, String> stringStringHashMap) {
-        callback.onAsyncResult(stringStringHashMap);
+    protected void onPostExecute(HashMap<String, String> coockies) {
+        callback.CloudflareScrapedCoockies(coockies);
     }
 
     public interface Callback {
-        void onAsyncResult(HashMap<String, String> result);
+        void CloudflareScrapedCoockies(HashMap<String, String> result);
     }
 }
