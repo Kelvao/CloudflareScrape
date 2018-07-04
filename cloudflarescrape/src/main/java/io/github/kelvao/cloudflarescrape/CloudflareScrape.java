@@ -26,7 +26,7 @@ public class CloudflareScrape {
             } else if (callback == null) {
                 message = "Callback";
             }
-            throw new RuntimeException(message + "is null", new Throwable());
+            throw new RuntimeException(message + " is null", new Throwable());
         }
     }
 

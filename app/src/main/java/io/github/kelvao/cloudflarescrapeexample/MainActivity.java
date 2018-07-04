@@ -5,11 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.HashMap;
 
-import io.github.kelvao.cloudflarescrape.CloudflareScrapTask;
 import io.github.kelvao.cloudflarescrape.CloudflareScrape;
 import io.github.kelvao.cloudflarescrape.CloudflareScrapeTask;
 
 public class MainActivity extends AppCompatActivity implements CloudflareScrapeTask.Callback {
+
+    private HashMap<String, String> coockies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements CloudflareScrapeT
 
     @Override
     public void CloudflareScrapedCoockies(HashMap<String, String> hashMap) {
-
+        this.coockies = hashMap;
     }
+
 }
