@@ -71,11 +71,11 @@ public JsoupTask(HashMap<String, String> coockies) {
     }
 ```
 
-Every time you make user Jsoup, use the coockies already generated and passed from callback.
+Every time you use Jsoup, use the coockies already generated from callback.
 
 ## Credits
 
-This project use [this class](https://github.com/zhkrb/cloudflare-scrape-Android) from [zhkrb](https://github.com/zhkrb)
+This project use [this class](https://github.com/zhkrb/cloudflare-scrape-Android) from [zhkrb](https://github.com/zhkrb).
 
 ## License
 
