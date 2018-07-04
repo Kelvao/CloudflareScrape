@@ -40,11 +40,11 @@ cloudflareScrape.execute();
 ```
 
 
-The callback returns the coockie to use in your Jsoup Task:
+The callback returns the cookie to use in your Jsoup Task:
 
 ```java
 @Override
-    public void CloudflareScrapedCoockies(HashMap<String, String> hashMap) {
+    public void CloudflareScrapedCookies(HashMap<String, String> hashMap) {
         //Add your AsyncTask to Jsoup
     }
 ```
@@ -53,25 +53,25 @@ The callback returns the coockie to use in your Jsoup Task:
 Your AsyncTask to Jsoup will look like this:
 
 ```java
-//Send the coockies to your constructor or as you prefer
-private HashMap<String, String> coockies;
+//Send the cookies to your constructor or as you prefer
+private HashMap<String, String> cookies;
 
-public JsoupTask(HashMap<String, String> coockies) {
-        this.coockies = coocies;
+public JsoupTask(HashMap<String, String> cookies) {
+        this.cookies = coolies;
 }
 
  @Override
     protected final Void doInBackground(Void... voids) {
         try {
             //And use in your Jsoup           
-            Connection.Response response = Jsoup.connect(YOUR_URL).cookie(coockies).execute();
+            Connection.Response response = Jsoup.connect(YOUR_URL).cookies(cookies).execute();
             Document html = response.parse();
             ...
             }
     }
 ```
 
-__Every time you use Jsoup, use the coockies already generated from callback.__
+__Every time you use Jsoup, use the cookies already generated from callback.__
 
 ## Credits
 
