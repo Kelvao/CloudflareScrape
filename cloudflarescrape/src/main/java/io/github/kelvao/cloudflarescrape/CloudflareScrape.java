@@ -5,7 +5,7 @@ public class CloudflareScrape {
 
     private String UA;
     private String URL;
-    private CloudflareScrapTask.Callback callback;
+    private CloudflareScrapeTask.Callback callback;
 
     CloudflareScrape(Builder builder) {
         this.UA = builder.UA;
@@ -13,16 +13,28 @@ public class CloudflareScrape {
         this.callback = builder.callback;
     }
 
-    public void execute() {
-        CloudflareScrapTask cloudflareScrapTask = new CloudflareScrapTask(UA, URL, callback);
-        cloudflareScrapTask.execute();
+    public void execute() throws RuntimeException {
+        if (URL != null && callback != null) {
+            CloudflareScrapeTask cloudflareScrapTask = new CloudflareScrapeTask(UA, URL, callback);
+            cloudflareScrapTask.execute();
+        } else {
+            String message = "";
+            if (URL == null) {
+                message = "Url";
+                if (callback == null)
+                    message = message + " and Callback";
+            } else if (callback == null) {
+                message = "Callback";
+            }
+            throw new RuntimeException(message + "is null", new Throwable());
+        }
     }
 
     public static class Builder {
 
         private String UA;
         private String URL;
-        private CloudflareScrapTask.Callback callback;
+        private CloudflareScrapeTask.Callback callback;
 
         public Builder setUA(String UA) {
             this.UA = UA;
@@ -34,7 +46,7 @@ public class CloudflareScrape {
             return this;
         }
 
-        public Builder setCallback(CloudflareScrapTask.Callback callback) {
+        public Builder setCallback(CloudflareScrapeTask.Callback callback) {
             this.callback = callback;
             return this;
         }

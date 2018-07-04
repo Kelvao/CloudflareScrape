@@ -4,13 +4,13 @@ import android.os.AsyncTask;
 
 import java.util.HashMap;
 
-class CloudflareScrapTask extends AsyncTask<Void, Void, HashMap<String, String>> {
+class CloudflareScrapeTask extends AsyncTask<Void, Void, HashMap<String, String>> {
 
     private final String UA;
     private final String URL;
     private final Callback callback;
 
-    CloudflareScrapTask(String UA, String URL, Callback callback) {
+    CloudflareScrapeTask(String UA, String URL, Callback callback) {
         this.UA = UA;
         this.URL = URL;
         this.callback = callback;

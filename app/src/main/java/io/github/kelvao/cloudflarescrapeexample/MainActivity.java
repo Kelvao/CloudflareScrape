@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements CloudflareScrapTa
         cloudflareScrape.execute();
     }
 
-
     @Override
     public void CloudflareScrapedCoockies(HashMap<String, String> hashMap) {
 
