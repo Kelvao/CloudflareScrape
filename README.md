@@ -41,7 +41,7 @@ The callback returns the coockie to use in your Jsoup Task:
 ```java
 @Override
     public void CloudflareScrapedCoockies(HashMap<String, String> hashMap) {
-        //Add your AsyncTaks to Jsoup
+        //Add your AsyncTask to Jsoup
     }
 ```
 
