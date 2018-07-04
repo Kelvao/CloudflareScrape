@@ -35,20 +35,33 @@ And just execute the AsyncTask:
 ```java
 cloudflareScrape.execute();
 ```
-The callback returns the coockie to use in your Jsoup
+
+The callback returns the coockie to use in your Jsoup Task:
 
 ```java
 @Override
     public void CloudflareScrapedCoockies(HashMap<String, String> hashMap) {
         //Add your AsyncTaks to Jsoup
     }
-    
-//Your AsyncTaks to Jsoup will look like this
+```
+
+Your AsyncTaks to Jsoup will look like this
+
+```java
+//Send the coockies to your constructor or as you prefer
+private HashMap<String, String> coockies;
+
+public JsoupTask(HashMap<String, String> coockies) {
+        this.coockies = coocies;
+}
+
  @Override
     protected final Void doInBackground(Void... voids) {
         try {
-            Connection.Response response = Jsoup.connect(URL).cookie(your hashmap with coockies).execute(); //maybe you get this with your constructor
+            //And use in your Jsoup           
+            Connection.Response response = Jsoup.connect(YOUR_URL).cookie(coockies).execute();
             Document html = response.parse();
             ...
             }
     }
+```
