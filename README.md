@@ -45,7 +45,7 @@ The callback returns the coockie to use in your Jsoup Task:
     }
 ```
 
-Your AsyncTaks to Jsoup will look like this
+Your AsyncTask to Jsoup will look like this:
 
 ```java
 //Send the coockies to your constructor or as you prefer
