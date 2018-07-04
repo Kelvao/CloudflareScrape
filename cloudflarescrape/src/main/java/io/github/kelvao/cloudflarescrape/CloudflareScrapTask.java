@@ -29,6 +29,6 @@ public class CloudflareScrapTask extends AsyncTask<Void, Void, HashMap<String, S
     }
 
     public interface Callback {
-        void CloudflareScrapedCoockies(HashMap<String, String> result);
+        void CloudflareScrapedCoockies(HashMap<String, String> coockies);
     }
 }
