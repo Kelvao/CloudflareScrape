@@ -4,6 +4,7 @@
 
 Library to use Jsoup on web pages with Cloudflare
 
+
 ## How to install
 
 Just add you have to add these lines in your build.gradle file:
@@ -19,6 +20,7 @@ implementation 'com.github.Kelvao:CloudflareScrape:0.1.0'
 
 ```
 
+
 ## How to use
 
 Instantiate a new CloudflareScrap object and set the Builder;
@@ -30,11 +32,13 @@ CloudflareScrape cloudflareScrape = new CloudflareScrape.Builder()
                 .build();
 ```
 
+
 And just execute the AsyncTask:
 
 ```java
 cloudflareScrape.execute();
 ```
+
 
 The callback returns the coockie to use in your Jsoup Task:
 
@@ -44,6 +48,7 @@ The callback returns the coockie to use in your Jsoup Task:
         //Add your AsyncTask to Jsoup
     }
 ```
+
 
 Your AsyncTask to Jsoup will look like this:
 
@@ -65,3 +70,12 @@ public JsoupTask(HashMap<String, String> coockies) {
             }
     }
 ```
+
+## Credits
+
+This project use [this class](https://github.com/zhkrb/cloudflare-scrape-Android)
+Thanks mr.[zhkrb](https://github.com/zhkrb)
+
+##License
+
+CloudflareScrape is released under the MIT license. See [LICENSE](https://github.com/Kelvao/CloudflareScrape/blob/master/LICENSE) for details.
