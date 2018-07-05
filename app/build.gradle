@@ -35,7 +35,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //CloudflareScrap
-    implementation 'com.github.Kelvao:CloudflareScrape:3ff9cb3ebc'
+    implementation 'com.github.Kelvao:CloudflareScrape:0.1.0'
     //Butterknife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
