@@ -16,7 +16,7 @@ allprojects {
       ...
 }
 
-implementation 'com.github.Kelvao:CloudflareScrape:0.1.0'
+implementation 'com.github.Kelvao:CloudflareScrape:0.2.0'
 
 ```
 
