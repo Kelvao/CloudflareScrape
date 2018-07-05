@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CloudflareScrapeExample</string>
+    <string name="tv_type">Type: %1$s</string>
+    <string name="tv_location">Location: %1$s</string>
 </resources>

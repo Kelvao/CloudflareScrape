@@ -179,7 +179,7 @@ class CloudflareScrapeCore {
                     String[] listStr = list.get(i).toString().split("=");
                     map.put(listStr[0], listStr[1]);
                 }
-                Log.i("Coockies", map.toString());
+                Log.i("CloudflareScrapeCore", map.toString());
             } else return map;
 
         } catch (IndexOutOfBoundsException e) {

@@ -1,5 +1,6 @@
 package io.github.kelvao.cloudflarescrapeexample.adapters;
 
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,10 +37,14 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
         final JobModel job = jobs.get(position);
         holder.tv_company.setText(job.getCompany());
         holder.tv_title.setText(job.getTitle());
-        holder.tv_featured_text.setText(job.getFeatured_text());
-        holder.tv_type.setText(job.getType());
-        holder.tv_location.setText(job.getLocation());
-        holder.itemView.setOnClickListener(view -> callback.onJobClick(job));
+        if (job.getFeatured_text() != null) {
+            holder.tv_featured_text.setVisibility(View.VISIBLE);
+            holder.tv_featured_text.setText(job.getFeatured_text());
+        }
+        Resources res = holder.itemView.getContext().getResources();
+        holder.tv_type.setText(String.format(res.getString(R.string.tv_type), job.getType()));
+        holder.tv_location.setText(String.format(res.getString(R.string.tv_location), job.getLocation()));
+        holder.itemView.setOnClickListener(view -> callback.onJobClick(job.getLink()));
     }
 
     @Override
@@ -48,7 +53,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
     }
 
     public interface Callback {
-        void onJobClick(JobModel job);
+        void onJobClick(String link);
     }
 
     class JobViewHolder extends RecyclerView.ViewHolder {
