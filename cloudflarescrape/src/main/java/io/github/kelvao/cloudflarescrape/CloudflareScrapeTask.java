@@ -10,7 +10,8 @@ public class CloudflareScrapeTask extends AsyncTask<Void, Void, HashMap<String, 
     private final String URL;
     private final Callback callback;
 
-    CloudflareScrapeTask(String UA, String URL, Callback callback) {
+    @SuppressWarnings("WeakerAccess")
+    public CloudflareScrapeTask(String UA, String URL, Callback callback) {
         this.UA = UA;
         this.URL = URL;
         this.callback = callback;
