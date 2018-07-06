@@ -79,4 +79,4 @@ This project use [this class](https://github.com/zhkrb/cloudflare-scrape-Android
 
 ## License
 
-CloudflareScrape is released under the MIT license. See [LICENSE](https://github.com/Kelvao/CloudflareScrape/blob/master/LICENSE) for details.
+CloudflareScrape is released under the Apache 2.0 license. See [LICENSE](https://github.com/Kelvao/CloudflareScrape/blob/master/LICENSE) for details.
