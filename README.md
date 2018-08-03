@@ -58,7 +58,7 @@ Your AsyncTask to Jsoup will look like this:
 private HashMap<String, String> cookies;
 
 public JsoupTask(HashMap<String, String> cookies) {
-        this.cookies = coolies;
+        this.cookies = cookies;
 }
 
  @Override
