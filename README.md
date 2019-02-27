@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![](https://jitpack.io/v/Kelvao/CloudflareScrape.svg)](https://jitpack.io/#Kelvao/CloudflareScrape)
 
-Library to use Jsoup on web pages with Cloudflare
+Library for Android to use Jsoup on web pages with Cloudflare
 
 
 ## How to install
